@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.797.0.min.js"></script>
+		<script src="./RecordingViewer.js"></script>
+		<script>listAlbums();</script>
+	</head>
 	<body>
-		<h1><center>Campaign II Recordings </center></h1>
-		<ul>
-			<li> <a href= "https://legends-of-frustengrad-recordings.s3.amazonaws.com/Season+II/Season+2%2C+Episode+01%3A+Answering+the+Call"> Episode One </a></li>
-			<li> Episode Two </li>
-		</ul>
+		<h1>Recording Viewer</h1>
+		<div id="viewer" />
 	</body>
 </html>
