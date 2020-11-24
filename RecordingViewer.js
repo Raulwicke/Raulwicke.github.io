@@ -28,7 +28,7 @@ function getHtml(template) {
 function listAlbums() {
   s3.listObjects({Delimiter: '/'}, function(err, data) {
     if (err) {
-      return alert('There was an error listing your albums: ' + err.message);
+      return alert('There was an error listing the campaigns: ' + err.message);
     } else {
       var albums = data.CommonPrefixes.map(function(commonPrefix) {
         var prefix = commonPrefix.Prefix;
@@ -43,11 +43,11 @@ function listAlbums() {
       });
       var message = albums.length ?
         getHtml([
-          '<p>Click on an album name to view it.</p>',
+          '<p>Click on an campaign to view episodes.</p>',
         ]) :
-        '<p>You do not have any albums. Please Create album.';
+        '<p>There are no campaigns to view. Please begin adventuring!';
       var htmlTemplate = [
-        '<h2>Albums</h2>',
+        '<h2>Campaigns</h2>',
         message,
         '<ul>',
           getHtml(albums),
@@ -63,7 +63,7 @@ function viewAlbum(albumName) {
   var albumPhotosKey = albumName + '/';
   s3.listObjects({Prefix: albumPhotosKey}, function(err, data) {
     if (err) {
-      return alert('There was an error viewing your album: ' + err.message);
+      return alert('There was an error viewing this campaign: ' + err.message);
     }
     // 'this' references the AWS.Response instance that represents the response
     var href = this.request.httpRequest.endpoint.href;
@@ -77,27 +77,27 @@ function viewAlbum(albumName) {
       ]);
     });
     var message = photos.length ?
-      '<p>The following photos are present.</p>' :
-      '<p>There are no photos in this album.</p>';
+      '<p>The following episodes are available.</p>' :
+      '<p>There are no episodes available in this campaign.</p>';
     var htmlTemplate = [
       '<div>',
         '<button onclick="listAlbums()">',
-          'Back To Albums',
+          'Back To Campaign Selection',
         '</button>',
       '</div>',
       '<h2>',
-        'Album: ' + albumName,
+        '' + albumName,
       '</h2>',
       message,
       '<div>',
         getHtml(photos),
       '</div>',
       '<h2>',
-        'End of Album: ' + albumName,
+        'End of ' + albumName,
       '</h2>',
       '<div>',
         '<button onclick="listAlbums()">',
-          'Back To Albums',
+          'Back To Campaign Selection',
         '</button>',
       '</div>',
     ]
