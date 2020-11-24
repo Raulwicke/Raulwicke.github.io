@@ -60,7 +60,7 @@ function listAlbums() {
 
 // Show the photos that exist in an album.
 function viewAlbum(albumName) {
-  var albumPhotosKey = encodeURIComponent(albumName) + '/';
+  var albumPhotosKey = albumName + '/';
   s3.listObjects({Prefix: albumPhotosKey}, function(err, data) {
     if (err) {
       return alert('There was an error viewing your album: ' + err.message);
@@ -73,17 +73,7 @@ function viewAlbum(albumName) {
       var photoKey = photo.Key;
       var photoUrl = bucketUrl + encodeURIComponent(photoKey);
       return getHtml([
-        '<span>',
-          '<div>',
-            '<br/>',
-            '<img style="width:128px;height:128px;" src="' + photoUrl + '"/>',
-          '</div>',
-          '<div>',
-            '<span>',
-              photoKey.replace(albumPhotosKey, ''),
-            '</span>',
-          '</div>',
-        '</span>',
+            '<p><a href="' + photoUrl + '">' + photoKey + '</a></p>',
       ]);
     });
     var message = photos.length ?
@@ -112,6 +102,6 @@ function viewAlbum(albumName) {
       '</div>',
     ]
     document.getElementById('viewer').innerHTML = getHtml(htmlTemplate);
-    document.getElementsByTagName('img')[0].setAttribute('style', 'display:none;');
+    document.getElementsByTagName('a')[0].setAttribute('style', 'display:none;');
   });
 }
