@@ -1,12 +1,34 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+	<!-- <head> -->
+		<!-- <meta charset="utf-8"/> -->
+	<!-- </head> -->
+	<!-- <body> -->
+		
+	<!-- </body> -->
+<!-- </html> -->
+
+
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-	</head>
-	<body>
-		<h1><center>Legends of Frustengrad Webpage</center></h1>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1><center>Legends of Frustengrad Webpage</center></h1>
 		<p><a href = "recordings.html"> Campaign II Recordings</a></p>
 		<p><a href = "https://app.fantasy-calendar.com/calendars/845c6ec1f11790fe3a4fd505bff00124"> Current Calendar of Frustengrad </a></p>
 		<p><a href = "https://rkehl27.github.io/frustengrad.github.io/index.html"> Map of Frustengrad </a></p>
-	</body>
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
 </html>
