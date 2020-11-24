@@ -43,7 +43,7 @@ function listAlbums() {
       });
       var message = albums.length ?
         getHtml([
-          '<p>Click on an campaign to view episodes.</p>',
+          '<p>Click on a campaign to view episodes.</p>',
         ]) :
         '<p>There are no campaigns to view. Please begin adventuring!';
       var htmlTemplate = [
@@ -73,7 +73,7 @@ function viewAlbum(albumName) {
       var photoKey = photo.Key;
       var photoUrl = bucketUrl + encodeURIComponent(photoKey);
       return getHtml([
-            '<p><a href="' + photoUrl + '">' + photoKey.replace(albumPhotosKey, '') + '</a></p>',
+            '<p><a href="' + photoUrl + '"target = _blank>' + photoKey.replace(albumPhotosKey, '') + '</a></p>',
       ]);
     });
     var message = photos.length ?
