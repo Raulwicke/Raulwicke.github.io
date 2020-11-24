@@ -73,7 +73,7 @@ function viewAlbum(albumName) {
       var photoKey = photo.Key;
       var photoUrl = bucketUrl + encodeURIComponent(photoKey);
       return getHtml([
-            '<p><a href="' + photoUrl + '">' + photoKey + '</a></p>',
+            '<p><a href="' + photoUrl + '">' + photoKey.replace(albumPhotosKey, '') + '</a></p>',
       ]);
     });
     var message = photos.length ?
@@ -102,6 +102,6 @@ function viewAlbum(albumName) {
       '</div>',
     ]
     document.getElementById('viewer').innerHTML = getHtml(htmlTemplate);
-    document.getElementsByTagName('a')[0].setAttribute('style', 'display:none;');
+    // document.getElementsByTagName('a')[0].setAttribute('style', 'display:none;');
   });
 }
