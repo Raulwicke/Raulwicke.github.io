@@ -2,12 +2,38 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="style.css">
 		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.797.0.min.js"></script>
 		<script src="./RecordingViewer.js"></script>
 		<script>listAlbums();</script>
 	</head>
 	<body>
-		<h1>Recording Viewer</h1>
-		<div id="viewer" />
+		<!-- Header -->
+		<div class = "header">
+			<h1>Recording Viewer</h1>
+		</div>
+		<!-- Navigation -->
+		<div class = "topnav">
+			<a href = "index.html"> Home</a>
+			<a href = "https://app.fantasy-calendar.com/calendars/845c6ec1f11790fe3a4fd505bff00124" target = _blank> Calendar </a>
+			<a href = "https://rkehl27.github.io/frustengrad.github.io/index.html" target = _blank> Continent Map </a>
+		</div>
+		
+		<!-- Columns -->
+		<div class ="row">
+			<div class = "column side">
+			<br/>
+			</div>
+			<div class = "column middle">
+			<div id="viewer" />
+			
+			</div>
+			<div class = "column side">
+			<br/>
+			</div>
+		</div>
+		<!-- Footer -->
+		<div class = "footer">
+		</div>
 	</body>
 </html>
