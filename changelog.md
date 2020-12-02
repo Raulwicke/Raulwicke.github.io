@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Archive of Notes and Gameplay Information
 - Narrative Arc breaks for Game Recordings.
 
+## [0.0.3 Hotfix] - 2020-12-02
+### Changed
+- Footer on Feature Requests and Changelog page did not properly update. Fixed.
+
 ## [0.0.3] - 2020-12-02
 ### Added
 - Offical map of Frustengrad to homepage as well as small blurb about the history of the project.
