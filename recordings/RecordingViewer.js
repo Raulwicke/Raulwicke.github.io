@@ -69,7 +69,7 @@ function viewAlbum(albumName) {
     var href = this.request.httpRequest.endpoint.href;
     var bucketUrl = href + albumBucketName + '/';
 
-   var photos = data.Contents.sort((a,b) => parseInt(a.Key.match(/\d\d+/g)[0]) > parseInt(b.Key.match(/\d\d+/g)[0]) ? 1 : -1).map(function(photo) {
+    var photos = data.Contents.map(function(photo) {
       var photoKey = photo.Key;
       var photoUrl = bucketUrl + encodeURIComponent(photoKey);
       return getHtml([
